@@ -1,7 +1,12 @@
+<% include partials/header %>
 <h1>Showing result for <%=moviename%></h1>
 
-<%movie.forEach(function(mov){%>
+<%if(movie.Response!== 'False') {%>
+<%movie['Search'].forEach(function(mov){%>
     <div><img src="<%=mov.Poster%>"> <p><strong><%=mov.Title%> - </strong><%=mov.Year%></p></div>
-<%});%>
+<%});} else { %>
+<h3><%=movie.Error%></h3>
+<%}%>
 
 <a href="/">Search Again!!!</a>
+<% include partials/footer %>

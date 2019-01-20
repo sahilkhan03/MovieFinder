@@ -3,6 +3,7 @@ var request=require('request');
 var bodyParser=require('body-parser');
 var app=express();
 app.use(bodyParser.urlencoded({extended : true}));
+
 app.use(express.static('public'));
 app.set('view engine','ejs');
 
@@ -14,7 +15,7 @@ app.get('/results',function (req,res) {
    var url='http://www.omdbapi.com/?s='+req.query.search+'&apikey=thewdb';
     request(url,function (error,response,body) {
        if(!error && response.statusCode==200)
-       {var movie=JSON.parse(body)['Search'];
+       {var movie=JSON.parse(body);
            res.render('results',{movie: movie,moviename:req.query.search});}
    });
 });
