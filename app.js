@@ -2,11 +2,7 @@ var express=require('express');
 var request=require('request');
 var bodyParser=require('body-parser');
 var app=express();
-<<<<<<< HEAD
 app.use(bodyParser.urlencoded({extended : true}));
-=======
-bodyParser.urlencoded({extended : true});
->>>>>>> 737f7f9fb71f7684c7dcd95f4d0f2c4340b9388a
 app.use(express.static('public'));
 app.set('view engine','ejs');
 
