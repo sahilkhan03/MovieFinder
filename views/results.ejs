@@ -1,0 +1,7 @@
+<h1>Showing result for <%=moviename%></h1>
+
+<%movie.forEach(function(mov){%>
+    <div><img src="<%=mov.Poster%>"> <p><strong><%=mov.Title%> - </strong><%=mov.Year%></p></div>
+<%});%>
+
+<a href="/">Search Again!!!</a>
