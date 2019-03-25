@@ -12,7 +12,7 @@ app.get('/',function (req,res) {
 });
 
 app.get('/results',function (req,res) {
-   var url='http://www.omdbapi.com/?s='+req.query.search+'&apikey=thewdb';
+   var url='http://www.omdbapi.com/?s='+req.query.search+'&apikey=d8e090de';
     request(url,function (error,response,body) {
        if(!error && response.statusCode==200)
        {var movie=JSON.parse(body);
